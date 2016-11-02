@@ -91,7 +91,7 @@ function filterPlusSix(words){
   return words
 }
 
-console.log(filterPlusSix(words))
+// console.log(filterPlusSix(words))
 
 
 
@@ -112,6 +112,23 @@ function f2C (temp){
 
 
 
+function calcTemp(){
+  let initialTemp = prompt('Enter your original temperature, numbers only.')
+  let method = prompt("Please pick a method: 'F to C' or 'C to F'.")
+  let translated = '';
+
+  if (method == 'C to F'){
+    translated = c2F(initialTemp)
+  } else if (method == 'F to C'){
+    translated = f2C(initialTemp)
+  } else {
+    alert('You did not enter a valid selection.  Please try again.')
+    calcTemp()
+  }
+  document.getElementById('q7').innerHTML = translated
+}
+// calcTemp()
+
 
 // 8. Write a function countBs() that takes a string as its only argument and returns
 //    a number that indicates how many uppercase “B” characters are in the string.
@@ -127,7 +144,7 @@ function countBs(str){
   return count
 }
 
-console.log(countBs('BBbBB'))
+// console.log(countBs('BBbBB'))
 
 
 
@@ -156,7 +173,7 @@ function countBs(str, char){
   return count
 }
 
-console.log(countBs('BBbBB', 'B'))
+// console.log(countBs('BBbBB', 'B'))
 
 
 
@@ -175,9 +192,17 @@ function ohZero(str){
 }
 
 // 12. Write a function that prints out the entire "99 Bottles of Beer on the Wall" song lyrics.
+function song(bottleNum){
+  for (let i=bottleNum; i>=0; i--){
+    if (i!== 0) {
+          console.log(`${i} bottles of beer on the wall, ${i} bottles of beer! Take one down, pass it around, ${i-1} bottles of beer on the wall!`)
+    } else {
+      console.log(`We drank all the beer.  We drunk.`)
+    }
+  }
+}
 
-
-
+// song(10)
 
 
 
@@ -187,7 +212,7 @@ function ohZero(str){
 //     too high or too low. This continues until the correct guess is entered.
 //     When the correct guess is entered the user is given a success message with the correct number.
 let ans = Math.ceil(Math.random()*10)
-console.log(ans)
+// console.log(ans)
 
 function guessingGame(){
   let temp = prompt('Guess a number between 1 and 10');
@@ -201,4 +226,4 @@ function guessingGame(){
     guessingGame()
   }
 }
-guessingGame()
+// guessingGame()
